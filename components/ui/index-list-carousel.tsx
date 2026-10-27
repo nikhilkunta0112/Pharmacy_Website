@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { ArrowLeft, ArrowRight, Pause, Play } from "lucide-react";
 import "./index-list-carousel.css";
 
 // Adapted from the supplied IndexListCarousel: wrap/pad2/layerOf, indexed
@@ -11,7 +10,6 @@ export type Slide = {
   image: string;
   title: string;
   description: string;
-  caption: string;
   alt: string;
   position?: string;
 };
@@ -81,7 +79,6 @@ export default function IndexListCarousel({
     paused: false,
     reduced: true,
   });
-  const [paused, setPaused] = React.useState(false);
   const [announcement, setAnnouncement] = React.useState("");
   const reduced = React.useSyncExternalStore(
     subscribeMotion,
@@ -121,12 +118,6 @@ export default function IndexListCarousel({
     },
     [commit],
   );
-  const move = (delta: number) =>
-    show(
-      wrap(current.current.active + delta, slides.length),
-      delta > 0 ? "forward" : "backward",
-    );
-
   React.useEffect(() => {
     onChange?.(state.active);
   }, [state.active, onChange]);
@@ -231,23 +222,6 @@ export default function IndexListCarousel({
               />
             </div>
           ))}
-          <figcaption className="il-caption">
-            {state.previous >= 0 && (
-              <span
-                key={`old-${state.turn}`}
-                className="il-caption-out"
-                aria-hidden="true"
-              >
-                {slides[state.previous].caption}
-              </span>
-            )}
-            <span
-              key={`new-${state.turn}`}
-              className={state.turn ? "il-caption-in" : undefined}
-            >
-              {slides[state.active].caption}
-            </span>
-          </figcaption>
         </figure>
       </div>
       <div className="il-list" aria-label="Choose a care principle">
@@ -292,41 +266,6 @@ export default function IndexListCarousel({
             </span>
           </button>
         ))}
-      </div>
-      <div className="il-controls" aria-label="Gallery controls">
-        <span className="il-counter" aria-hidden="true">
-          {pad2(state.active + 1)} <span>/ {pad2(slides.length)}</span>
-        </span>
-        <button
-          type="button"
-          aria-label="Previous care story"
-          onClick={() => move(-1)}
-        >
-          <ArrowLeft size={18} />
-        </button>
-        <button
-          type="button"
-          aria-label="Next care story"
-          onClick={() => move(1)}
-        >
-          <ArrowRight size={18} />
-        </button>
-        {autoplay > 0 && (
-          <button
-            type="button"
-            aria-label={
-              paused || reduced ? "Play care stories" : "Pause care stories"
-            }
-            disabled={reduced}
-            onClick={() => {
-              activity.current.paused = !paused;
-              activity.current.lastManual = performance.now();
-              setPaused(!paused);
-            }}
-          >
-            {paused || reduced ? <Play size={16} /> : <Pause size={16} />}
-          </button>
-        )}
       </div>
       <span className="il-sr" aria-live="polite" aria-atomic="true">
         {announcement}

@@ -8,11 +8,8 @@
   gap: clamp(32px, 5vw, 80px);
   align-items: center;
 }
-.tp-intro-block .eyebrow {
-  justify-content: flex-start;
-}
 .tp-intro-block h2 {
-  margin: 22px 0 18px;
+  margin: 0 0 18px;
 }
 .tp-intro {
   max-width: 460px;

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { ArrowUpRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Eyebrow } from "@/components/eyebrow";
 import { pharmacy } from "@/lib/content";
 import "./transfer.css";
 
@@ -35,7 +34,6 @@ export function TransferProcess() {
       <div className="container">
         <div className="tp-top">
           <div className="tp-intro-block">
-            <Eyebrow>A NEW PHARMACY. A THOUGHTFUL START.</Eyebrow>
             <h2 className="display">
               Switching pharmacies?
               <br />

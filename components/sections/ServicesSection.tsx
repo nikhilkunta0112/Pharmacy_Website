@@ -84,20 +84,6 @@ export function ServicesSection() {
               sizes="(max-width: 767px) 100vw, 52vw"
             />
           </div>
-          <div className="rx-privacy">
-            <span className="rx-privacy-icon">
-              <ShieldCheck size={16} strokeWidth={2} aria-hidden="true" />
-            </span>
-            <div>
-              <p className="rx-privacy-title">
-                Your information deserves care, too.
-              </p>
-              <p className="rx-privacy-copy">
-                This website does not collect prescriptions or personal medical
-                information.
-              </p>
-            </div>
-          </div>
         </div>
         <div className="rx-copy">
           <p className="rx-eyebrow">Prescription guidance</p>
