@@ -1,30 +1,30 @@
 /* Scoped to the approved hero and header; other page sections retain their styles. */
 .site-header {
-  background: #000;
-  border-bottom: 0;
+  background: #fff;
+  border-bottom: 1px solid #e1e8f4;
 }
 .site-header .header-inner {
   width: 92%;
   max-width: 1800px;
-  height: clamp(90px, 7.7vw, 128px);
+  height: clamp(76px, 6vw, 96px);
 }
 .site-header .brand-logo-img {
-  height: clamp(60px, 6.5vw, 100px);
+  height: clamp(40px, 4vw, 56px);
 }
 .site-header .desktop-nav {
   gap: clamp(18px, 2.6vw, 44px);
 }
 .site-header .desktop-nav a {
   font-size: clamp(13px, 1.1vw, 18px);
-  color: #e8edf5;
+  color: #122852;
 }
 .site-header .desktop-nav a:hover {
-  color: #F5A31A;
+  color: #2d5ba8;
 }
 .site-header .header-cta {
   background: #F5A31A;
   border: none;
-  color: #000;
+  color: #122852;
   border-radius: 20px;
   font-size: clamp(13px, 1.15vw, 19px);
   padding: 17px 30px;
@@ -347,12 +347,13 @@
     width: calc(100% - 40px);
     height: 78px;
   }
-  .site-header .brand-logo-img { height: 52px; }
+  .site-header .brand-logo-img { height: 38px; }
   .site-header .header-cta {
     display: none;
   }
   .site-header .menu-button {
     margin-left: auto;
+    color: #122852;
   }
   .care-hero {
     padding: 0 20px 32px;
