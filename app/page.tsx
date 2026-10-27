@@ -1,6 +1,5 @@
 import { SiteHeader } from "@/components/header";
-import { Brand } from "@/components/brand";
-import { navigation, pharmacy } from "@/lib/content";
+import { SiteFooter } from "@/components/footer";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ServiceOverview } from "@/components/sections/ServiceOverview";
 import { WhyElevate } from "@/components/sections/WhyElevate";
@@ -32,36 +31,7 @@ export default function Home() {
         <FAQSection />
         <ContactSection />
       </main>
-      <footer>
-        <div className="container footer-main">
-          <a href="#home">
-            <Brand />
-          </a>
-          <p>
-            A personal approach.
-            <br />A healthier everyday.
-          </p>
-          <nav aria-label="Footer navigation">
-            {navigation.slice(1).map(([label, href]) => (
-              <a href={href} key={href}>
-                {label}
-              </a>
-            ))}
-          </nav>
-        </div>
-        <div className="container footer-bottom">
-          <span>© {new Date().getFullYear()} Elevate Care Pharmacy</span>
-          <div>
-            {pharmacy.privacyUrl ? (
-              <a href={pharmacy.privacyUrl}>Privacy Policy</a>
-            ) : (
-              <span>Privacy policy pending approval</span>
-            )}
-            <a href="/accessibility">Accessibility</a>
-          </div>
-          <span>Designed around people.</span>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }
