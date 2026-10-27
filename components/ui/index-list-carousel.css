@@ -1,0 +1,421 @@
+.il-visual-plain {
+  display: contents;
+}
+.il-root {
+  display: grid;
+  grid-template-columns: minmax(0, 0.47fr) minmax(0, 0.53fr);
+  grid-template-rows: auto 1fr auto;
+  column-gap: clamp(48px, 4vw, 80px);
+  padding-left: 4%;
+  margin: 0;
+  position: relative;
+  color: var(--forest);
+}
+.il-editorial {
+  grid-column: 2;
+  grid-row: 1;
+  padding-top: 6px;
+}
+.il-editorial.about-copy h2 {
+  margin: 23px 0;
+}
+.il-editorial.about-copy > p:not(.eyebrow) {
+  font-size: 16px;
+  max-width: 460px;
+}
+.il-pane {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  position: relative;
+  height: 555px;
+  overflow: hidden;
+  border-radius: 3px 3px 80px 3px;
+  background: #C5D5ED;
+  isolation: isolate;
+}
+.il-layer {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+.il-layer[data-layer="on"] {
+  visibility: visible;
+  z-index: 2;
+  animation: il-wipe-forward 850ms cubic-bezier(0.7, 0, 0.2, 1);
+}
+.il-layer[data-layer="was"] {
+  visibility: visible;
+  z-index: 1;
+}
+.il-root[data-direction="backward"] .il-layer[data-layer="on"] {
+  animation-name: il-wipe-backward;
+}
+.il-root[data-turn="0"] .il-layer[data-layer="on"],
+.il-root[data-turn="0"] .il-layer[data-layer="on"] img {
+  animation: none;
+}
+.il-layer[data-layer="on"] img {
+  animation: il-photo-settle 1000ms ease-out;
+}
+.il-caption {
+  position: absolute;
+  z-index: 3;
+  /* Equal 24px insets clear the 80px circular corner (20px does not). */
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  width: auto;
+  max-width: calc(100% - 48px);
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+  background: #fff;
+  padding: 17px 20px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--green);
+  display: grid;
+}
+.il-caption > span {
+  grid-area: 1 / 1;
+}
+.il-caption-in {
+  animation: il-caption-in 450ms ease both;
+}
+.il-caption-out {
+  animation: il-caption-out 200ms ease both;
+}
+.il-list {
+  grid-column: 2;
+  grid-row: 2 / 4;
+  align-self: start;
+  min-height: 285px;
+  margin-top: 30px;
+}
+.il-row {
+  appearance: none;
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr);
+  column-gap: 14px;
+  width: 100%;
+  padding: 21px 0;
+  border: 0;
+  border-top: 1px solid #C5D5ED;
+  background: transparent;
+  text-align: left;
+  color: #3A5080;
+  position: relative;
+}
+.il-row::before {
+  content: "";
+  position: absolute;
+  top: 19px;
+  bottom: 19px;
+  left: -12px;
+  width: 2px;
+  background: #2D5BA8;
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+.il-row[data-on="true"]::before {
+  opacity: 1;
+}
+.il-row[data-on="true"] {
+  color: var(--forest);
+}
+.il-number {
+  font-size: 11px;
+  line-height: 27px;
+  color: #3A5080;
+}
+.il-title {
+  font-size: clamp(19px, 1.5vw, 22px);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+.il-more {
+  grid-column: 2;
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 350ms ease,
+    opacity 250ms ease;
+}
+.il-more > span {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+  min-height: 0;
+}
+.il-row[data-on="true"] .il-more {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+.il-row[data-on="true"] .il-more > span {
+  padding-top: 8px;
+}
+.il-controls {
+  grid-column: 1;
+  grid-row: 3;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-top: 13px;
+  color: var(--green);
+}
+.il-counter {
+  margin-right: auto;
+  font-size: 12px;
+}
+.il-counter > span {
+  color: #4A6080;
+  margin-left: 6px;
+}
+.il-controls button {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid #C5D5ED;
+  border-radius: 50%;
+  color: var(--green);
+  transition: background 200ms ease;
+}
+.il-controls button:hover {
+  background: #D2DCF0;
+}
+.il-controls button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.il-row:focus-visible,
+.il-controls button:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 4px;
+}
+.il-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.il-root[data-side="right"] .il-pane,
+.il-root[data-side="right"] .il-controls {
+  grid-column: 2;
+}
+.il-root[data-side="right"] .il-editorial,
+.il-root[data-side="right"] .il-list {
+  grid-column: 1;
+}
+@keyframes il-wipe-forward {
+  from {
+    clip-path: inset(0 0 0 100%);
+  }
+  to {
+    clip-path: inset(0);
+  }
+}
+@keyframes il-wipe-backward {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0);
+  }
+}
+@keyframes il-photo-settle {
+  from {
+    transform: scale(1.015);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes il-caption-in {
+  0%,
+  45% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes il-caption-out {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .il-root {
+    column-gap: 5%;
+    grid-template-columns: 45% minmax(0, 1fr);
+  }
+  .il-pane {
+    height: 565px;
+  }
+  .il-editorial .display {
+    font-size: 36px;
+  }
+  .il-editorial.about-copy > p:not(.eyebrow) {
+    font-size: 15px;
+  }
+  .il-row {
+    padding: 19px 0;
+  }
+}
+@media (max-width: 950px) {
+  .il-root {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto auto;
+    gap: 0;
+  }
+  .il-root .il-editorial {
+    grid-column: 1;
+    grid-row: 1;
+    padding-top: 0;
+  }
+  .il-root .il-pane {
+    grid-column: 1;
+    grid-row: 2;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    margin-top: 27px;
+    border-bottom-right-radius: 52px;
+  }
+  .il-root .il-list {
+    grid-column: 1;
+    grid-row: 3;
+    margin-top: 25px;
+    min-height: 285px;
+  }
+  .il-root .il-controls {
+    grid-column: 1;
+    grid-row: 4;
+    padding-top: 0;
+  }
+  .il-editorial .display {
+    font-size: clamp(32px, 8.7vw, 42px);
+  }
+  .il-row {
+    padding: 20px 0;
+  }
+  .il-caption {
+    /* Clear the smaller 52px corner while keeping equal edge spacing. */
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    max-width: calc(100% - 32px);
+    padding: 12px 14px;
+    font-size: 12px;
+  }
+  .il-title {
+    font-size: 19px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .il-layer,
+  .il-layer img,
+  .il-caption > span {
+    animation: none !important;
+  }
+  .il-caption-out {
+    display: none;
+  }
+  .il-more,
+  .il-row::before,
+  .il-controls button {
+    transition: none;
+  }
+}
+.il-root[data-reduced="true"] .il-layer,
+.il-root[data-reduced="true"] .il-layer img,
+.il-root[data-reduced="true"] .il-caption > span {
+  animation: none;
+}
+.il-root[data-reduced="true"] .il-caption-out {
+  display: none;
+}
+/* Match the preceding editorial rows; contrast overrides stay inside #about. */
+#about.about-section {
+  background: #1E3B6E;
+}
+#about .il-root {
+  --forest: #f7f8f2;
+  --green: #f7f8f2;
+  --muted: #f5f8ef;
+}
+#about .il-editorial.about-copy > p:not(.eyebrow) {
+  max-width: 520px;
+}
+#about .il-row,
+#about .il-number,
+#about .il-counter > span {
+  color: #f5f8ef;
+}
+#about .il-row[data-on="true"] {
+  color: #f7f8f2;
+}
+#about .il-row {
+  border-color: #7A9CC8;
+}
+#about .il-row::before {
+  background: #BDD0EC;
+}
+#about .il-caption {
+  color: #1E3B6E;
+}
+#about .il-controls button {
+  border-color: #7A9CC8;
+}
+#about .il-controls button:hover {
+  background: #2D5BA8;
+}
+@media (min-width: 1800px) {
+  .il-root {
+    max-width: 2000px;
+    margin-inline: auto;
+  }
+}
+@media (max-width: 950px) {
+  .il-root {
+    padding-right: 0;
+  }
+}
+@media (max-width: 767px) {
+  .il-root {
+    padding-inline: 20px;
+  }
+}
+/* Standalone editorial identifier; other section eyebrows keep their dots. */
+#about .il-editorial .approach-label {
+  display: block;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  color: #fff;
+}
+#about .il-editorial.about-copy h2 {
+  margin-top: 24px;
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  #about .il-editorial .approach-label {
+    font-size: 14px;
+  }
+}
+@media (max-width: 767px) {
+  #about .il-editorial .approach-label {
+    font-size: 13px;
+  }
+}

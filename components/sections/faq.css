@@ -1,0 +1,231 @@
+main > .faq-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  column-gap: clamp(24px, 3vw, 48px);
+  row-gap: 28px;
+  align-items: start;
+  padding-block: 88px;
+  background: #f3f6fb;
+}
+/* The left column's children sit directly in the grid so the list can share
+   a row with the photo and line up with its top edge. */
+.faq-side {
+  display: contents;
+}
+.faq-heading {
+  grid-column: 1;
+  grid-row: 1;
+}
+.faq-heading h2 {
+  margin: 0 0 14px;
+}
+.faq-heading p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4a6080;
+}
+
+/* Photo card: fixed size, independent of which question is open. */
+.faq-media {
+  position: relative;
+  grid-column: 1;
+  grid-row: 2;
+  height: 560px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 32px;
+  background: #d6e3f5;
+}
+.faq-media img {
+  object-fit: cover;
+  object-position: 66% 40%;
+}
+/* Question cards. */
+.faq-list {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+.faq-item {
+  border: 1px solid #e1e8f4;
+  border-radius: 24px;
+  background: #fff;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.faq-item h3 {
+  margin: 0;
+}
+.faq-item:hover {
+  border-color: #b9c9e6;
+}
+.faq-item[data-state="open"] {
+  border-color: #b9c9e6;
+  box-shadow: 0 10px 28px rgba(30, 59, 110, 0.08);
+}
+.faq-item button {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  padding: 14px 20px 14px 14px;
+  border: 0;
+  background: none;
+  color: #0d1a38;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 550;
+  line-height: 1.4;
+  cursor: pointer;
+}
+.faq-item button:focus-visible {
+  outline: 3px solid #2d5ba8;
+  outline-offset: -3px;
+  border-radius: 24px;
+}
+.faq-number {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #eef3fa;
+  color: #7a90b3;
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+.faq-item button[data-state="open"] .faq-number {
+  background: #1e3b6e;
+  color: #fff;
+}
+.faq-question {
+  flex: 1;
+  min-width: 0;
+}
+.faq-toggle {
+  display: grid;
+  flex: none;
+  color: #1e3b6e;
+}
+.faq-toggle svg {
+  grid-area: 1 / 1;
+}
+.faq-minus,
+.faq-item button[data-state="open"] .faq-plus {
+  display: none;
+}
+.faq-item button[data-state="open"] .faq-minus {
+  display: block;
+}
+.faq-item [role="region"] {
+  overflow: hidden;
+}
+.faq-item [role="region"] p {
+  padding: 0 24px 22px 84px;
+  color: #4a6080;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .faq-item [role="region"][data-state="open"] {
+    animation: faq-open 0.25s ease-out;
+  }
+  .faq-item [role="region"][data-state="closed"] {
+    animation: faq-close 0.2s ease-in;
+  }
+  @supports (animation-timeline: view()) {
+    .faq-item {
+      animation: faq-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+  }
+}
+@keyframes faq-open {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+}
+@keyframes faq-close {
+  from {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+@keyframes faq-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .faq-media {
+    height: 600px;
+  }
+}
+@media (max-width: 1023px) {
+  main > .faq-section {
+    grid-template-columns: minmax(0, 1fr);
+    padding-block: 64px;
+    row-gap: 24px;
+  }
+  .faq-heading,
+  .faq-media,
+  .faq-list {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .faq-media {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+}
+@media (max-width: 767px) {
+  main > .faq-section {
+    padding-block: 48px;
+  }
+  .faq-media {
+    border-radius: 24px;
+  }
+  .faq-item {
+    border-radius: 20px;
+  }
+  .faq-item button {
+    gap: 14px;
+    padding: 12px 16px 12px 12px;
+    font-size: 15px;
+  }
+  .faq-number {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+  .faq-item [role="region"] p {
+    padding: 0 18px 18px 18px;
+    font-size: 14px;
+  }
+}

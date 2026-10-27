@@ -1,0 +1,480 @@
+/* Scoped to the approved hero and header; other page sections retain their styles. */
+.site-header {
+  background: #000;
+  border-bottom: 0;
+}
+.site-header .header-inner {
+  width: 92%;
+  max-width: 1800px;
+  height: clamp(90px, 7.7vw, 128px);
+}
+.site-header .brand-logo-img {
+  height: clamp(60px, 6.5vw, 100px);
+}
+.site-header .desktop-nav {
+  gap: clamp(18px, 2.6vw, 44px);
+}
+.site-header .desktop-nav a {
+  font-size: clamp(13px, 1.1vw, 18px);
+  color: #e8edf5;
+}
+.site-header .desktop-nav a:hover {
+  color: #F5A31A;
+}
+.site-header .header-cta {
+  background: #F5A31A;
+  border: none;
+  color: #000;
+  border-radius: 20px;
+  font-size: clamp(13px, 1.15vw, 19px);
+  padding: 17px 30px;
+  font-weight: 600;
+}
+.site-header .header-cta:hover {
+  background: #d98e10;
+}
+.care-hero {
+  background: #fff;
+  color: #151515;
+  padding-bottom: 46px;
+}
+.care-hero-main,
+.next-steps-composition {
+  display: grid;
+  grid-template-columns: 34% minmax(0, 1fr);
+  gap: 1%;
+  padding-left: 4%;
+  align-items: center;
+}
+.care-hero-copy {
+  padding: 25px 0 40px;
+  min-width: 0;
+}
+.care-hero h1 {
+  margin: 0 0 22px;
+  color: #151515;
+  font-size: clamp(38px, 4.95vw, 88px);
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 1.03;
+  text-wrap: initial;
+}
+.care-hero h1 span {
+  display: block;
+  white-space: nowrap;
+}
+.care-hero h1 span:last-child {
+  color: #F5A31A;
+}
+.care-description {
+  max-width: 490px;
+  padding-right: 15px;
+  font-size: clamp(17px, 1.55vw, 27px);
+  line-height: 1.4;
+  color: #555a60;
+}
+.care-actions {
+  display: flex;
+  gap: 20px;
+  margin-top: 50px;
+  padding-right: 20px;
+}
+.care-actions .button {
+  min-height: 65px;
+  flex: 1;
+  border-radius: 20px;
+  font-size: clamp(14px, 1.15vw, 20px);
+  padding: 15px 18px;
+  white-space: nowrap;
+  gap: 15px;
+}
+.care-actions .button-primary {
+  background: #1E3B6E;
+}
+.care-actions .button-primary:hover {
+  background: #122852;
+}
+.care-actions .button-secondary {
+  color: #1E3B6E;
+  border-color: #2D5BA8;
+}
+.care-actions .button-secondary:hover {
+  background: #EBF0FA;
+}
+.care-collage {
+  display: grid;
+  grid-template-columns: repeat(24, minmax(0, 1fr));
+  grid-template-rows: repeat(24, minmax(0, 1fr));
+  gap: 5px;
+  aspect-ratio: 1.65;
+  isolation: isolate;
+  container-type: inline-size;
+}
+.care-tile {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  min-height: 0;
+}
+.care-photo img {
+  transition: transform 0.45s ease;
+}
+.care-photo:hover img {
+  transform: scale(1.025);
+}
+.care-pharmacist {
+  grid-area: 1 / 6 / 11 / 13;
+}
+.care-botanical {
+  grid-area: 1 / 13 / 9 / 18;
+}
+.care-family {
+  grid-area: 1 / 18 / 10 / 25;
+  filter: grayscale(1);
+}
+.care-interaction {
+  grid-area: 11 / 1 / 20 / 8;
+}
+.care-patient {
+  grid-area: 9 / 13 / 25 / 19;
+}
+.care-leaf-detail {
+  grid-area: 20 / 4 / 25 / 8;
+}
+.care-medication {
+  grid-area: 18 / 8 / 25 / 13;
+  filter: saturate(0.55);
+}
+.care-premises {
+  grid-area: 17 / 19 / 25 / 24;
+  filter: grayscale(1);
+}
+.care-letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  line-height: 0.75;
+}
+.care-letter span {
+  position: absolute;
+  font-size: 31cqw;
+  letter-spacing: -0.07em;
+}
+.care-letter-c {
+  grid-area: 1 / 1 / 11 / 6;
+  background: #1E3B6E;
+}
+.care-letter-c span {
+  left: -1cqw;
+  bottom: -1.4cqw;
+}
+.care-letter-a {
+  grid-area: 11 / 8 / 18 / 13;
+  background: #F5A31A;
+}
+.care-letter-a span {
+  font-size: 27cqw;
+  bottom: -0.8cqw;
+  left: -0.6cqw;
+}
+.care-letter-r {
+  grid-area: 17 / 13 / 25 / 18;
+  background: #4E74B4;
+}
+.care-letter-r span {
+  font-size: 29cqw;
+  left: 0.3cqw;
+  bottom: -1cqw;
+}
+.care-letter-e {
+  grid-area: 10 / 19 / 17 / 24;
+  background: #1E3B6E;
+  border-left: 1.6cqw solid #4E74B4;
+}
+.care-letter-e span {
+  font-size: 25cqw;
+  bottom: -0.4cqw;
+  left: -0.6cqw;
+}
+.care-accent {
+  grid-area: 1 / 23 / 5 / 25;
+  background: #F5A31A;
+  z-index: 1;
+}
+.care-benefits {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  list-style: none;
+  margin: 30px 4% 0;
+  padding: 0;
+}
+.care-benefits li {
+  display: flex;
+  align-items: center;
+  gap: clamp(15px, 1.7vw, 30px);
+  padding: 0 1.8vw;
+  border-right: 1px solid #dedee0;
+}
+.care-benefits li:first-child {
+  padding-left: 20px;
+}
+.care-benefits li:last-child {
+  border: 0;
+}
+.care-benefit-icon {
+  display: grid;
+  place-items: center;
+  width: clamp(55px, 4.4vw, 74px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  color: #1E3B6E;
+  flex-shrink: 0;
+}
+.care-benefit-icon svg {
+  width: 58%;
+  height: 58%;
+}
+.care-benefit-icon.sage {
+  background: #EBF0FA;
+}
+.care-benefit-icon.aqua {
+  background: #D2DCF0;
+}
+.care-benefit-icon.yellow {
+  background: #FFF3D9;
+}
+.care-benefits h2 {
+  font-size: clamp(14px, 1.15vw, 20px);
+  font-weight: 500;
+  color: #0D1A38;
+}
+.care-benefits p {
+  margin-top: 7px;
+  font-size: clamp(12px, 1vw, 18px);
+  line-height: 1.4;
+  color: #555a60;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .care-hero-copy {
+    animation: care-reveal 0.6s ease-out both;
+  }
+  .care-tile {
+    animation: care-reveal 0.7s ease-out backwards;
+  }
+  .care-tile:nth-child(2n) {
+    animation-delay: 0.1s;
+  }
+  .care-tile:nth-child(3n) {
+    animation-delay: 0.2s;
+  }
+}
+@keyframes care-reveal {
+  from {
+    opacity: 0.35;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (min-width: 1800px) {
+  .care-hero-main,
+  .next-steps-composition {
+    max-width: 2000px;
+    margin-inline: auto;
+  }
+}
+@media (max-width: 1199px) {
+  .site-header .desktop-nav {
+    gap: 16px;
+  }
+  .site-header .header-cta {
+    padding: 13px 18px;
+    font-size: 13px;
+  }
+  .care-hero-main {
+    grid-template-columns: 39% minmax(0, 1fr);
+    gap: 2%;
+    padding: 15px 0 0 4%;
+  }
+  .care-hero h1 {
+    font-size: 5.3vw;
+  }
+  .care-collage {
+    aspect-ratio: 1.15;
+    gap: 3px;
+  }
+  .care-description {
+    font-size: 19px;
+  }
+  .care-actions {
+    flex-wrap: wrap;
+    margin-top: 28px;
+    gap: 12px;
+  }
+  .care-actions .button {
+    min-height: 52px;
+    font-size: 14px;
+    padding-inline: 16px;
+    flex: initial;
+  }
+  .care-benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px 0;
+    margin-top: 30px;
+  }
+  .care-benefits li {
+    padding: 0 24px;
+  }
+  .care-benefits li:nth-child(2) {
+    border: 0;
+  }
+  .care-benefits li:nth-child(3) {
+    padding-left: 20px;
+  }
+  .care-benefits h2 {
+    font-size: 17px;
+  }
+  .care-benefits p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 767px) {
+  .site-header .header-inner {
+    width: calc(100% - 40px);
+    height: 78px;
+  }
+  .site-header .brand-logo-img { height: 52px; }
+  .site-header .header-cta {
+    display: none;
+  }
+  .site-header .menu-button {
+    margin-left: auto;
+  }
+  .care-hero {
+    padding: 0 20px 32px;
+  }
+  .care-hero-main {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 30px;
+    align-items: stretch;
+  }
+  .care-hero-copy {
+    padding: 32px 0 0;
+  }
+  .care-hero h1 {
+    font-size: clamp(36px, 10.8vw, 65px);
+    margin-bottom: 22px;
+    letter-spacing: -0.05em;
+  }
+  .care-description {
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 530px;
+    padding: 0;
+  }
+  .care-actions {
+    padding: 0;
+    gap: 10px;
+    margin-top: 27px;
+  }
+  .care-actions .button {
+    padding: 13px 15px;
+    border-radius: 15px;
+    min-height: 52px;
+    font-size: 14px;
+    flex: 1 1 auto;
+  }
+  .care-collage {
+    aspect-ratio: 1.12;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+  }
+  .care-photo,
+  .care-accent {
+    display: none;
+  }
+  .care-pharmacist {
+    display: block;
+    grid-area: 1 / 2 / 2 / 4;
+  }
+  .care-patient {
+    display: block;
+    grid-area: 2 / 3 / 3 / 5;
+  }
+  .care-letter-c {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .care-letter-a {
+    grid-area: 1 / 4 / 2 / 5;
+  }
+  .care-letter-r {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .care-letter-e {
+    grid-area: 2 / 2 / 3 / 3;
+    border-left: 0;
+  }
+  .care-letter span {
+    font-size: 49cqw;
+    left: -2cqw;
+    bottom: -1cqw;
+  }
+  .care-letter-a span {
+    font-size: 45cqw;
+    left: -3cqw;
+  }
+  .care-letter-r span,
+  .care-letter-e span {
+    font-size: 46cqw;
+    left: -1cqw;
+  }
+  .care-benefits {
+    margin: 27px 0 0;
+    gap: 23px 18px;
+  }
+  .care-benefits li,
+  .care-benefits li:first-child,
+  .care-benefits li:nth-child(3) {
+    padding: 0;
+    border: 0;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .care-benefit-icon {
+    width: 40px;
+  }
+  .care-benefits h2 {
+    font-size: 14px;
+    line-height: 1.25;
+  }
+  .care-benefits p {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+}
+@media (max-width: 359px) {
+  .care-benefits {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .care-benefit-icon {
+    width: 44px;
+  }
+}
+/* Keep the portrait above the oversized R so the subject remains unobstructed. */
+@media (min-width: 768px) {
+  .care-patient img {
+    height: 68% !important;
+    object-position: 50% 25% !important;
+  }
+  .care-patient {
+    background: #2D4A80;
+  }
+}

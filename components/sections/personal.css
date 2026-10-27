@@ -1,0 +1,165 @@
+/* Matches the "Elevate Care approach" section: deep blue with light text. */
+main > .personal-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(24px, 5vw, 80px);
+  align-items: center;
+  text-align: left;
+  padding-block: 88px;
+  background: #1e3b6e;
+  color: #f7f8f2;
+}
+.pc-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.pc-copy .section-number {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #fff;
+}
+.pc-copy > svg {
+  margin: 24px 0 18px;
+  color: #bdd0ec;
+}
+.pc-copy h2 {
+  margin: 0;
+  color: #f7f8f2;
+}
+.pc-copy h2 em {
+  color: #bdd0ec;
+}
+.pc-copy p {
+  max-width: 460px;
+  margin: 22px 0;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #d4e1f5;
+}
+.pc-copy .personal-signature {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* One photograph shown through two slanted capsules. */
+.pc-visual {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  margin-inline: auto;
+}
+.pc-visual svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.pc-label {
+  position: absolute;
+  color: #f7f8f2;
+  font-size: clamp(16px, 1.5vw, 22px);
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.pc-label-1 {
+  left: 24%;
+  top: 90%;
+}
+.pc-label-2 {
+  left: 62%;
+  top: 77%;
+}
+
+/* The halves start apart and slide together, completing the picture. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .pc-piece-1 {
+      animation: pc-join-1 linear both;
+      animation-timeline: view();
+      animation-range: entry 5% cover 35%;
+    }
+    .pc-piece-2 {
+      animation: pc-join-2 linear both;
+      animation-timeline: view();
+      animation-range: entry 5% cover 35%;
+    }
+    .pc-label {
+      animation: pc-fade linear both;
+      animation-timeline: view();
+      animation-range: entry 40% cover 38%;
+    }
+    .pc-copy > * {
+      animation: pc-copy linear both;
+      animation-timeline: view();
+      animation-range: entry 5% entry 70%;
+    }
+  }
+}
+@keyframes pc-join-1 {
+  from {
+    opacity: 0.2;
+    transform: translate(-130px, 150px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes pc-join-2 {
+  from {
+    opacity: 0.2;
+    transform: translate(130px, -150px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes pc-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes pc-copy {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  main > .personal-section {
+    grid-template-columns: minmax(0, 1fr);
+    padding-block: 64px;
+    gap: 40px;
+  }
+  .pc-visual {
+    max-width: 520px;
+  }
+}
+@media (max-width: 767px) {
+  main > .personal-section {
+    padding-block: 48px;
+  }
+  .pc-copy .section-number {
+    font-size: 13px;
+  }
+  .pc-copy p {
+    font-size: 16px;
+  }
+  .pc-label {
+    font-size: 15px;
+  }
+}

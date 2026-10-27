@@ -1,0 +1,10 @@
+node_modules/
+.font-download/
+plein.zip
+fontshare-page.html
+.next/
+test-results/
+playwright-report/
+*.tsbuildinfo
+.env*
+!.env.example

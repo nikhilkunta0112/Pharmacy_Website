@@ -1,0 +1,42 @@
+/* Every section below the hero is an inset, rounded card. The hero is untouched. */
+:root {
+  --section-radius: 40px;
+  --section-gap: 12px;
+}
+main > section:not(.care-hero) {
+  margin: var(--section-gap) var(--section-gap) 0;
+  border-radius: var(--section-radius);
+  overflow: clip;
+}
+/* Sections that were themselves the centred container keep their content width. */
+main > section.container {
+  width: auto;
+  max-width: none;
+  padding-inline: max(56px, calc((100% - 1280px) / 2));
+}
+main > .next-steps-section {
+  padding-top: 48px;
+}
+main > .services-editorial {
+  background: #f3f6fb;
+}
+main > .personal-section {
+  background: #fff;
+}
+@media (max-width: 950px) {
+  :root {
+    --section-radius: 28px;
+  }
+  main > section.container {
+    padding-inline: 32px;
+  }
+}
+@media (max-width: 767px) {
+  :root {
+    --section-radius: 22px;
+    --section-gap: 8px;
+  }
+  main > section.container {
+    padding-inline: 20px;
+  }
+}

@@ -1,0 +1,267 @@
+.transfer-section {
+  background: #ebf0fa;
+  padding: 88px 0;
+}
+.tp-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(32px, 5vw, 80px);
+  align-items: center;
+}
+.tp-intro-block .eyebrow {
+  justify-content: flex-start;
+}
+.tp-intro-block h2 {
+  margin: 22px 0 18px;
+}
+.tp-intro {
+  max-width: 460px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #4a6080;
+}
+.tp-photo {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 90px 24px 24px 24px;
+  background: #d6e3f5;
+}
+.tp-photo img {
+  object-fit: cover;
+  object-position: 60% 50%;
+}
+
+.tp-panel {
+  margin-top: 40px;
+  padding: clamp(28px, 4vw, 56px);
+  border-radius: 32px;
+  background: #fff;
+}
+.tp-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 64px);
+}
+.tp-step {
+  position: relative;
+  padding-top: 28px;
+}
+/* A line that draws across the top of each step and ends in a dot. */
+.tp-step::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #2d5ba8, #a8bbde);
+  transform-origin: left;
+}
+.tp-step::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #2d5ba8;
+  box-shadow: 0 0 0 5px #ebf0fa;
+}
+.tp-step-number {
+  display: block;
+  font-size: clamp(56px, 6vw, 88px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+  color: #2d5ba8;
+  background: linear-gradient(135deg, #4e74b4, #122852);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform-origin: left bottom;
+}
+.tp-step h3 {
+  margin: 20px 0 8px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+}
+.tp-step p {
+  max-width: 320px;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.tp-footer {
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid #d2dcf0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px 40px;
+}
+.tp-ready-title {
+  color: #122852;
+  font-size: 14px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+}
+.tp-ready ul {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+.tp-ready li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #4a6080;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.tp-ready li svg {
+  flex: none;
+  color: #2d5ba8;
+}
+.tp-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 22px;
+}
+.tp-bottom p {
+  max-width: 220px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Each step draws its line, then its number rises in, then its copy follows. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .tp-step::before {
+      animation: tp-line linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 70%;
+    }
+    .tp-step::after {
+      animation: tp-dot linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+    .tp-step-number {
+      animation: tp-number linear both;
+      animation-timeline: view();
+      animation-range: entry 10% entry 85%;
+    }
+    .tp-step h3,
+    .tp-step p {
+      animation: tp-copy linear both;
+      animation-timeline: view();
+      animation-range: entry 30% entry 100%;
+    }
+    .tp-step:nth-child(2)::before,
+    .tp-step:nth-child(2) .tp-step-number {
+      animation-range: entry 8% entry 78%;
+    }
+    .tp-step:nth-child(3)::before,
+    .tp-step:nth-child(3) .tp-step-number {
+      animation-range: entry 16% entry 86%;
+    }
+    .tp-step:nth-child(2) h3,
+    .tp-step:nth-child(2) p {
+      animation-range: entry 38% entry 100%;
+    }
+    .tp-step:nth-child(3) h3,
+    .tp-step:nth-child(3) p {
+      animation-range: entry 46% entry 100%;
+    }
+  }
+}
+@keyframes tp-line {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes tp-dot {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes tp-number {
+  from {
+    opacity: 0;
+    transform: translateY(36px) scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes tp-copy {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .transfer-section {
+    padding: 64px 0;
+  }
+  .tp-top {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .tp-photo {
+    border-top-left-radius: 72px;
+  }
+  .tp-steps {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
+  .tp-step p {
+    max-width: none;
+  }
+}
+@media (max-width: 767px) {
+  .transfer-section {
+    padding: 48px 0;
+  }
+  .tp-photo {
+    aspect-ratio: 4 / 3;
+    border-top-left-radius: 56px;
+  }
+  .tp-panel {
+    margin-top: 28px;
+    padding: 24px 20px;
+    border-radius: 24px;
+  }
+  .tp-footer {
+    margin-top: 32px;
+  }
+  .tp-ready ul {
+    flex-direction: column;
+  }
+}

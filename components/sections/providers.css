@@ -1,0 +1,253 @@
+/* The photo runs under a large brand-blue circle and is masked to follow its arc,
+   so the photo edge is always curved, never a hard crop.
+   --pv-h is the section height; --k is the circle radius as a share of it. */
+main > .providers-section {
+  --pv-h: 640px;
+  --k: 0.44;
+  --pv-r: calc(var(--pv-h) * var(--k));
+  position: relative;
+  height: var(--pv-h);
+  background: #ebf0fa;
+  color: #fff;
+}
+.pv-photo {
+  position: absolute;
+  inset: 0;
+  --cx: calc(96% - var(--pv-r));
+  --ring: calc(var(--pv-r) + 8px);
+  -webkit-mask-image:
+    radial-gradient(
+      circle var(--ring) at var(--cx) 50%,
+      transparent calc(var(--ring) - 0.5px),
+      #000 var(--ring)
+    ),
+    linear-gradient(to right, #000 calc(var(--cx) - 180px), transparent var(--cx));
+  -webkit-mask-composite: source-in;
+  mask-image:
+    radial-gradient(
+      circle var(--ring) at var(--cx) 50%,
+      transparent calc(var(--ring) - 0.5px),
+      #000 var(--ring)
+    ),
+    linear-gradient(to right, #000 calc(var(--cx) - 180px), transparent var(--cx));
+  mask-composite: intersect;
+}
+.pv-photo img {
+  inset: 0 auto 0 0;
+  width: var(--cx);
+  object-fit: cover;
+  object-position: 50% 59%;
+}
+.pv-circle {
+  position: absolute;
+  top: 50%;
+  right: 4%;
+  translate: 0 -50%;
+  height: calc(var(--pv-r) * 2);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #1e3b6e;
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.35);
+  display: grid;
+  place-items: center;
+}
+.pv-content {
+  width: min(430px, 78%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.pv-eyebrow {
+  margin: 0 0 14px;
+  color: #bdd0ec;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+.providers-section h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(32px, 3.3vw, 46px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+.providers-section h2 em {
+  color: #bdd0ec;
+}
+.pv-copy {
+  margin: 18px 0 0;
+  color: #d4e1f5;
+  font-size: 17px;
+  line-height: 1.55;
+}
+.pv-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 26px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  background: #fff;
+  color: #1e3b6e;
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.2;
+  transition:
+    background 0.18s ease,
+    transform 0.18s ease;
+}
+.pv-cta:hover {
+  background: #ebf0fa;
+  transform: translateY(-1px);
+}
+.pv-content small {
+  display: block;
+  margin-top: 16px;
+  color: #95b0d4;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Decoration on the arc, echoing the reference. */
+.pv-dot,
+.pv-badge {
+  position: absolute;
+  border-radius: 50%;
+  background: #fff;
+  translate: -50% -50%;
+}
+.pv-dot-1 {
+  left: 6.7%;
+  top: 33%;
+  width: 28px;
+  height: 28px;
+}
+.pv-dot-2 {
+  left: 2.5%;
+  top: 41%;
+  width: 15px;
+  height: 15px;
+}
+.pv-badge {
+  left: 4.2%;
+  top: 66%;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  color: #2d5ba8;
+  box-shadow: 0 8px 20px rgba(18, 40, 82, 0.2);
+}
+
+/* The circle stays solid; only its contents ease in. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .pv-content {
+      animation: pv-in linear both;
+      animation-timeline: view();
+      animation-range: entry 10% entry 80%;
+    }
+    .pv-dot {
+      animation: pv-pop linear both;
+      animation-timeline: view();
+      animation-range: entry 20% entry 80%;
+    }
+  }
+  .pv-badge::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    animation: pv-pulse 2.4s ease-out infinite;
+  }
+}
+@keyframes pv-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes pv-pop {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
+  }
+}
+@keyframes pv-pulse {
+  from {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1100px) {
+  main > .providers-section {
+    --pv-h: 580px;
+    --k: 0.46;
+  }
+  .pv-content {
+    width: min(380px, 78%);
+  }
+}
+/* Stacked on mobile: photo above, blue panel below. */
+@media (max-width: 767px) {
+  main > .providers-section {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .pv-photo {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 260px;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .pv-photo img {
+    width: 100%;
+  }
+  .pv-circle {
+    position: relative;
+    top: auto;
+    right: auto;
+    translate: none;
+    height: auto;
+    aspect-ratio: auto;
+    border-radius: 28px 28px 0 0;
+    margin-top: -24px;
+    box-shadow: none;
+    padding: 32px 20px 36px;
+    display: block;
+  }
+  .pv-content {
+    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .pv-dot {
+    display: none;
+  }
+  .pv-badge {
+    left: auto;
+    right: 20px;
+    top: 0;
+    width: 44px;
+    height: 44px;
+  }
+}

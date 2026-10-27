@@ -1,0 +1,445 @@
+{
+  "contentUnchanged": true,
+  "results": [
+    {
+      "width": 375,
+      "overflow": false,
+      "cls": 0,
+      "fonts": [
+        {
+          "family": "plein",
+          "weight": "300 900",
+          "status": "loaded"
+        },
+        {
+          "family": "plein Fallback",
+          "weight": "normal",
+          "status": "unloaded"
+        }
+      ],
+      "headings": [
+        {
+          "text": "Your Health.Elevated.",
+          "size": "43.5px",
+          "weight": "600",
+          "lineHeight": "46.98px",
+          "clipped": false
+        },
+        {
+          "text": "Pharmacy care, made simple.",
+          "size": "23px",
+          "weight": "600",
+          "lineHeight": "28.75px",
+          "clipped": false
+        },
+        {
+          "text": "Good pharmacy carefeels personal.",
+          "size": "33px",
+          "weight": "600",
+          "lineHeight": "38.28px",
+          "clipped": false
+        },
+        {
+          "text": "Care that fitsinto your life.",
+          "size": "33px",
+          "weight": "600",
+          "lineHeight": "38.28px",
+          "clipped": false
+        },
+        {
+          "text": "Switching pharmacies?Let’s take it step by step.",
+          "size": "33px",
+          "weight": "600",
+          "lineHeight": "38.28px",
+          "clipped": false
+        },
+        {
+          "text": "More than a prescription.A person worth knowing.",
+          "size": "27px",
+          "weight": "600",
+          "lineHeight": "32.94px",
+          "clipped": false
+        },
+        {
+          "text": "On the same side.Your patient’s.",
+          "size": "33px",
+          "weight": "600",
+          "lineHeight": "38.28px",
+          "clipped": false
+        },
+        {
+          "text": "A small introduction.A meaningful commitment.",
+          "size": "25px",
+          "weight": "600",
+          "lineHeight": "32.5px",
+          "clipped": false
+        },
+        {
+          "text": "Good questions.Clear next steps.",
+          "size": "33px",
+          "weight": "600",
+          "lineHeight": "38.28px",
+          "clipped": false
+        },
+        {
+          "text": "Your neighborhood.Your pharmacy.",
+          "size": "33px",
+          "weight": "600",
+          "lineHeight": "38.28px",
+          "clipped": false
+        },
+        {
+          "text": "Your care deservesa personal touch.",
+          "size": "33px",
+          "weight": "600",
+          "lineHeight": "38.28px",
+          "clipped": false
+        }
+      ],
+      "inconsistentFamilies": [],
+      "fontRequests": [
+        "http://127.0.0.1:3001/_next/static/media/Plein_Variable-s.p.1bvp4mxtd6mkb.woff2"
+      ],
+      "renderedFonts": {
+        "fonts": [
+          {
+            "familyName": "Plein Variable",
+            "postScriptName": "Plein-Variable",
+            "isCustomFont": true,
+            "glyphCount": 21
+          }
+        ]
+      }
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "cls": 0,
+      "fonts": [
+        {
+          "family": "plein",
+          "weight": "300 900",
+          "status": "loaded"
+        },
+        {
+          "family": "plein Fallback",
+          "weight": "normal",
+          "status": "unloaded"
+        }
+      ],
+      "headings": [
+        {
+          "text": "Your Health.Elevated.",
+          "size": "42.24px",
+          "weight": "600",
+          "lineHeight": "45.6192px",
+          "clipped": false
+        },
+        {
+          "text": "Pharmacy care, made simple.",
+          "size": "23px",
+          "weight": "600",
+          "lineHeight": "28.75px",
+          "clipped": false
+        },
+        {
+          "text": "Good pharmacy carefeels personal.",
+          "size": "33px",
+          "weight": "600",
+          "lineHeight": "38.28px",
+          "clipped": false
+        },
+        {
+          "text": "Care that fitsinto your life.",
+          "size": "33px",
+          "weight": "600",
+          "lineHeight": "38.28px",
+          "clipped": false
+        },
+        {
+          "text": "Switching pharmacies?Let’s take it step by step.",
+          "size": "33px",
+          "weight": "600",
+          "lineHeight": "38.28px",
+          "clipped": false
+        },
+        {
+          "text": "More than a prescription.A person worth knowing.",
+          "size": "33px",
+          "weight": "600",
+          "lineHeight": "38.28px",
+          "clipped": false
+        },
+        {
+          "text": "On the same side.Your patient’s.",
+          "size": "33px",
+          "weight": "600",
+          "lineHeight": "38.28px",
+          "clipped": false
+        },
+        {
+          "text": "A small introduction.A meaningful commitment.",
+          "size": "25px",
+          "weight": "600",
+          "lineHeight": "32.5px",
+          "clipped": false
+        },
+        {
+          "text": "Good questions.Clear next steps.",
+          "size": "33px",
+          "weight": "600",
+          "lineHeight": "38.28px",
+          "clipped": false
+        },
+        {
+          "text": "Your neighborhood.Your pharmacy.",
+          "size": "33px",
+          "weight": "600",
+          "lineHeight": "38.28px",
+          "clipped": false
+        },
+        {
+          "text": "Your care deservesa personal touch.",
+          "size": "33px",
+          "weight": "600",
+          "lineHeight": "38.28px",
+          "clipped": false
+        }
+      ],
+      "inconsistentFamilies": [],
+      "fontRequests": [
+        "http://127.0.0.1:3001/_next/static/media/Plein_Variable-s.p.1bvp4mxtd6mkb.woff2"
+      ],
+      "renderedFonts": {
+        "fonts": [
+          {
+            "familyName": "Plein Variable",
+            "postScriptName": "Plein-Variable",
+            "isCustomFont": true,
+            "glyphCount": 21
+          }
+        ]
+      }
+    },
+    {
+      "width": 1024,
+      "overflow": false,
+      "cls": 0,
+      "fonts": [
+        {
+          "family": "plein",
+          "weight": "300 900",
+          "status": "loaded"
+        },
+        {
+          "family": "plein Fallback",
+          "weight": "normal",
+          "status": "unloaded"
+        }
+      ],
+      "headings": [
+        {
+          "text": "Your Health.Elevated.",
+          "size": "48.64px",
+          "weight": "600",
+          "lineHeight": "52.5312px",
+          "clipped": false
+        },
+        {
+          "text": "Pharmacy care, made simple.",
+          "size": "23px",
+          "weight": "600",
+          "lineHeight": "28.75px",
+          "clipped": false
+        },
+        {
+          "text": "Good pharmacy carefeels personal.",
+          "size": "33.28px",
+          "weight": "600",
+          "lineHeight": "38.6048px",
+          "clipped": false
+        },
+        {
+          "text": "Care that fitsinto your life.",
+          "size": "33.28px",
+          "weight": "600",
+          "lineHeight": "38.6048px",
+          "clipped": false
+        },
+        {
+          "text": "Switching pharmacies?Let’s take it step by step.",
+          "size": "33.28px",
+          "weight": "600",
+          "lineHeight": "38.6048px",
+          "clipped": false
+        },
+        {
+          "text": "More than a prescription.A person worth knowing.",
+          "size": "33.28px",
+          "weight": "600",
+          "lineHeight": "38.6048px",
+          "clipped": false
+        },
+        {
+          "text": "On the same side.Your patient’s.",
+          "size": "33.28px",
+          "weight": "600",
+          "lineHeight": "38.6048px",
+          "clipped": false
+        },
+        {
+          "text": "A small introduction.A meaningful commitment.",
+          "size": "25px",
+          "weight": "600",
+          "lineHeight": "32.5px",
+          "clipped": false
+        },
+        {
+          "text": "Good questions.Clear next steps.",
+          "size": "33.28px",
+          "weight": "600",
+          "lineHeight": "38.6048px",
+          "clipped": false
+        },
+        {
+          "text": "Your neighborhood.Your pharmacy.",
+          "size": "33.28px",
+          "weight": "600",
+          "lineHeight": "38.6048px",
+          "clipped": false
+        },
+        {
+          "text": "Your care deservesa personal touch.",
+          "size": "33.28px",
+          "weight": "600",
+          "lineHeight": "38.6048px",
+          "clipped": false
+        }
+      ],
+      "inconsistentFamilies": [],
+      "fontRequests": [
+        "http://127.0.0.1:3001/_next/static/media/Plein_Variable-s.p.1bvp4mxtd6mkb.woff2"
+      ],
+      "renderedFonts": {
+        "fonts": [
+          {
+            "familyName": "Plein Variable",
+            "postScriptName": "Plein-Variable",
+            "isCustomFont": true,
+            "glyphCount": 21
+          }
+        ]
+      }
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "cls": 0,
+      "fonts": [
+        {
+          "family": "plein",
+          "weight": "300 900",
+          "status": "loaded"
+        },
+        {
+          "family": "plein Fallback",
+          "weight": "normal",
+          "status": "unloaded"
+        }
+      ],
+      "headings": [
+        {
+          "text": "Your Health.Elevated.",
+          "size": "68px",
+          "weight": "600",
+          "lineHeight": "73.44px",
+          "clipped": false
+        },
+        {
+          "text": "Pharmacy care, made simple.",
+          "size": "25.92px",
+          "weight": "600",
+          "lineHeight": "32.4px",
+          "clipped": false
+        },
+        {
+          "text": "Good pharmacy carefeels personal.",
+          "size": "46px",
+          "weight": "600",
+          "lineHeight": "53.36px",
+          "clipped": false
+        },
+        {
+          "text": "Care that fitsinto your life.",
+          "size": "46px",
+          "weight": "600",
+          "lineHeight": "53.36px",
+          "clipped": false
+        },
+        {
+          "text": "Switching pharmacies?Let’s take it step by step.",
+          "size": "46px",
+          "weight": "600",
+          "lineHeight": "53.36px",
+          "clipped": false
+        },
+        {
+          "text": "More than a prescription.A person worth knowing.",
+          "size": "46px",
+          "weight": "600",
+          "lineHeight": "53.36px",
+          "clipped": false
+        },
+        {
+          "text": "On the same side.Your patient’s.",
+          "size": "46px",
+          "weight": "600",
+          "lineHeight": "53.36px",
+          "clipped": false
+        },
+        {
+          "text": "A small introduction.A meaningful commitment.",
+          "size": "30px",
+          "weight": "600",
+          "lineHeight": "39px",
+          "clipped": false
+        },
+        {
+          "text": "Good questions.Clear next steps.",
+          "size": "46px",
+          "weight": "600",
+          "lineHeight": "53.36px",
+          "clipped": false
+        },
+        {
+          "text": "Your neighborhood.Your pharmacy.",
+          "size": "46px",
+          "weight": "600",
+          "lineHeight": "53.36px",
+          "clipped": false
+        },
+        {
+          "text": "Your care deservesa personal touch.",
+          "size": "46px",
+          "weight": "600",
+          "lineHeight": "53.36px",
+          "clipped": false
+        }
+      ],
+      "inconsistentFamilies": [],
+      "fontRequests": [
+        "http://127.0.0.1:3001/_next/static/media/Plein_Variable-s.p.1bvp4mxtd6mkb.woff2"
+      ],
+      "renderedFonts": {
+        "fonts": [
+          {
+            "familyName": "Plein Variable",
+            "postScriptName": "Plein-Variable",
+            "isCustomFont": true,
+            "glyphCount": 21
+          }
+        ]
+      }
+    }
+  ]
+}
